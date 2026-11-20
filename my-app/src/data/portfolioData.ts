@@ -202,10 +202,10 @@ export const SERVICES: Service[] = [
 // ============================================
 
 export const CONTACT = {
-  email: 'your@email.com',              // ← Replace with your real email
-  github: 'https://github.com/yourusername',   // ← Replace
+  email: 'g7226143@gmail.com',              // ← Replace with your real email
+  github: 'https://github.com/g7226143',   // ← Replace
   linkedin: 'https://linkedin.com/in/yourusername', // ← Replace
-  whatsapp: 'https://wa.me/91XXXXXXXXXX',  // ← Replace with your number
+  whatsapp: 'https://wa.me/91+8887331101',  // ← Replace with your number
   location: 'Kanpur, Uttar Pradesh, India',
 };
 
