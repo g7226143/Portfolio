@@ -1,0 +1,123 @@
+.proc-section {
+  padding: 7rem 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.proc-header {
+  margin-bottom: 4rem;
+}
+
+.proc-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--lime);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.proc-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--paper);
+  line-height: 1.1;
+}
+
+.proc-heading-lime { color: var(--lime); }
+
+/* Grid — 4 columns */
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Connecting line behind */
+.proc-grid::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--lime), transparent 80%);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Step */
+.proc-step {
+  position: relative;
+  padding: 0 1.5rem 2rem 0;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.proc-step--visible { opacity: 1; transform: translateY(0); }
+.proc-step:nth-child(1) { transition-delay: 0.05s; }
+.proc-step:nth-child(2) { transition-delay: 0.15s; }
+.proc-step:nth-child(3) { transition-delay: 0.25s; }
+.proc-step:nth-child(4) { transition-delay: 0.35s; }
+
+.proc-step__connector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.proc-step__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lime);
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(201, 243, 107, 0.4);
+}
+
+.proc-step__line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  display: none;
+}
+
+.proc-step__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.proc-step__num {
+  font-size: 0.75rem;
+  color: var(--lime);
+  letter-spacing: 0.1em;
+}
+
+.proc-step__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--paper);
+  letter-spacing: -0.02em;
+}
+
+.proc-step__desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 1000px) {
+  .proc-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .proc-grid::before { display: none; }
+}
+
+@media (max-width: 600px) {
+  .proc-grid { grid-template-columns: 1fr; }
+}
+
